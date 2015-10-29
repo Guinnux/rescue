@@ -9,6 +9,7 @@ arm-gnx5-linux-gnueabi-pacman -r $PWD/image -U $PWD/repo/libarchive-rescue-3.1.2
 arm-gnx5-linux-gnueabi-pacman -r $PWD/image -U $PWD/repo/pacman-rescue-4.2.1-2-arm.pkg.tar.xz
 arm-gnx5-linux-gnueabi-pacman -r $PWD/image -U $PWD/repo/init-rescue-1.0.0-1-any.pkg.tar.xz
 arm-gnx5-linux-gnueabi-pacman -r $PWD/image -U $PWD/repo/openssl-rescue-1.0.2.d-1-arm.pkg.tar.xz
+arm-gnx5-linux-gnueabi-pacman -r $PWD/image -U $PWD/repo/e2fsprogs-rescue-1.42.13-1-arm.pkg.tar.xz
 
 arm-gnx5-linux-gnueabi-pacman -r $PWD/image -S iproute2
 arm-gnx5-linux-gnueabi-pacman -r $PWD/image -S gcc-libs
