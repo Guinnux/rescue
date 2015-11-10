@@ -1,31 +1,31 @@
 #/bin/sh
 IMG=$PWD/image
-mkdir -p $PWD/image/var/lib/pacman
-#arm-gnx5-linux-gnueabi-pacman -r $PWD/image -Sy 
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -S --noconfirm filesystem 
+mkdir -p $IMG/var/lib/pacman
+#arm-gnx5-linux-gnueabi-pacman -r $IMG -Sy 
+arm-gnx5-linux-gnueabi-pacman -r $IMG -S --noconfirm filesystem 
 
 #Remove this one as busybox brings its own that works with ash
 rm -fR $IMG/etc/profile
 
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -U --noconfirm $PWD/repo/busybox-rescue-1.21.1-1-arm.pkg.tar.xz
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -U --noconfirm $PWD/repo/libarchive-rescue-3.1.2-8-arm.pkg.tar.xz
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -U --noconfirm $PWD/repo/pacman-rescue-4.2.1-2-arm.pkg.tar.xz
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -U --noconfirm $PWD/repo/init-rescue-1.0.0-1-any.pkg.tar.xz
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -U --noconfirm $PWD/repo/openssl-rescue-1.0.2.d-1-arm.pkg.tar.xz
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -U --noconfirm $PWD/repo/e2fsprogs-rescue-1.42.13-1-arm.pkg.tar.xz
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -U --noconfirm $PWD/repo/log4cpp-1.1.1-1-arm.pkg.tar.xz
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -U --noconfirm $PWD/repo/libklog-1.1-1-arm.pkg.tar.xz
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -U --noconfirm $PWD/repo/gnxid-2.0.2-1-arm.pkg.tar.xz
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -U --noconfirm $PWD/repo/gnx-installer-3.0-1-any.pkg.tar.xz
+arm-gnx5-linux-gnueabi-pacman -r $IMG -U --noconfirm $PWD/repo/busybox-rescue-1.21.1-1-arm.pkg.tar.xz
+arm-gnx5-linux-gnueabi-pacman -r $IMG -U --noconfirm $PWD/repo/libarchive-rescue-3.1.2-8-arm.pkg.tar.xz
+arm-gnx5-linux-gnueabi-pacman -r $IMG -U --noconfirm $PWD/repo/pacman-rescue-4.2.1-2-arm.pkg.tar.xz
+arm-gnx5-linux-gnueabi-pacman -r $IMG -U --noconfirm $PWD/repo/init-rescue-1.0.0-1-any.pkg.tar.xz
+arm-gnx5-linux-gnueabi-pacman -r $IMG -U --noconfirm $PWD/repo/openssl-rescue-1.0.2.d-1-arm.pkg.tar.xz
+arm-gnx5-linux-gnueabi-pacman -r $IMG -U --noconfirm $PWD/repo/dropbear-2015.67-2-arm.pkg.tar.xz
+arm-gnx5-linux-gnueabi-pacman -r $IMG -U --noconfirm $PWD/repo/e2fsprogs-rescue-1.42.13-1-arm.pkg.tar.xz
+arm-gnx5-linux-gnueabi-pacman -r $IMG -U --noconfirm $PWD/repo/log4cpp-1.1.1-1-arm.pkg.tar.xz
+arm-gnx5-linux-gnueabi-pacman -r $IMG -U --noconfirm $PWD/repo/libklog-1.1-1-arm.pkg.tar.xz
+arm-gnx5-linux-gnueabi-pacman -r $IMG -U --noconfirm $PWD/repo/gnxid-2.0.2-1-arm.pkg.tar.xz
+arm-gnx5-linux-gnueabi-pacman -r $IMG -U --noconfirm $PWD/repo/gnx-installer-3.0-1-any.pkg.tar.xz
 
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -S --noconfirm iproute2
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -S --noconfirm gcc-libs
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -S --noconfirm acl
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -S --noconfirm expat
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -S --noconfirm lzo
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -S --noconfirm bzip2
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -S --noconfirm dropbear
-arm-gnx5-linux-gnueabi-pacman -r $PWD/image -S --noconfirm nano
+arm-gnx5-linux-gnueabi-pacman -r $IMG -S --noconfirm iproute2
+arm-gnx5-linux-gnueabi-pacman -r $IMG -S --noconfirm gcc-libs
+arm-gnx5-linux-gnueabi-pacman -r $IMG -S --noconfirm acl
+arm-gnx5-linux-gnueabi-pacman -r $IMG -S --noconfirm expat
+arm-gnx5-linux-gnueabi-pacman -r $IMG -S --noconfirm lzo
+arm-gnx5-linux-gnueabi-pacman -r $IMG -S --noconfirm bzip2
+arm-gnx5-linux-gnueabi-pacman -r $IMG -S --noconfirm nano
 
 rm -fR $IMG/usr/include
 rm -fR $IMG/usr/share/iana-etc
