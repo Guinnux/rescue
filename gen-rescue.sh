@@ -27,6 +27,7 @@ echo "Using output directory '$IMG' .."
 echo "Cleaning old images .."
 if [ -e $IMG ]; then
 	rm -fR $IMG
+	rm -f  $IMG/../rescue-$ARCH.*
 fi
 
 
@@ -87,4 +88,9 @@ install -d -m755 $IMG/mnt/gnx
 pushd $PWD
 cd $IMG
 mkfs.jffs2 --little-endian --eraseblock=0x10000 -n --pad -o ../rescue-$ARCH.pacman.jffs2
+tar -cvpf ../rescue-$ARCH.tar .
+cd ..
+wc -c rescue-$ARCH.tar
+xz -9 -e rescue-$ARCH.tar
+
 popd
