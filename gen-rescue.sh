@@ -26,8 +26,8 @@ echo "Using output directory '$IMG' .."
 
 echo "Cleaning old images .."
 if [ -e $IMG ]; then
-	rm -fR $IMG
 	rm -f  $IMG/../rescue-$ARCH.*
+	rm -fR $IMG
 fi
 
 
@@ -75,6 +75,7 @@ rm -fR $IMG/usr/lib/gconv
 rm -fR $IMG/usr/lib/getconf
 rm -fR $IMG/usr/lib/perl5
 rm -fR $IMG/var/lib/pacman
+rm -fR $IMG/usr/lib/libgo.*
 
 $ARCH_PREFIX-strip $IMG/usr/lib/*.so
 $ARCH_PREFIX-strip $IMG/usr/bin/*
